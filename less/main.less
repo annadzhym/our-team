@@ -1,0 +1,129 @@
+.main {
+  display: flex;
+  position: relative;
+
+  &__section {
+    width: 50%;
+    padding: 50px;
+
+    &:after {
+      position: absolute;
+      content: '';
+      border-right: 2px solid @yellow;
+      top: 60px;
+      bottom: 40px;
+      right: 50%;
+    }
+  }
+
+  &__img-border {
+    border: 1px solid @yellow;
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+
+    &:before {
+      top: 0;
+      bottom: 0;
+      right: -5px;
+      left: -5px;
+      height: 50%;
+      .img-second-border;
+    }
+
+    &:after {
+      top: -5px;
+      bottom: -5px;
+      right: 0;
+      left: 0;
+      width: 50%;
+      .img-second-border;
+    }
+  }
+
+  &__img-border img {
+    border: 1px solid @yellow;
+    position: relative;
+    z-index: 2;
+  }
+
+  &:before {
+    .fancy-arrow();
+    left: 0;
+    transform: rotate(150grad);
+  }
+
+  &:after {
+    .fancy-arrow();
+    right: 0;
+    transform: rotate(-55grad);
+  }
+
+  &__section--info {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__section--title {
+    font-family: 'Roboto', sans-serif;
+    color:  @dark-grey;
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 24px;
+    position: relative;
+
+    &:after {
+      .bottom-header-line;
+      width: 30%;
+      bottom: -30px;
+      left: 35%;
+    }
+  }
+
+  &__section--subtitle {
+    font-family: 'Raleway', sans-serif;
+    color:  @grey;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 36px;
+    text-align: center;
+  }
+
+  &__section--text {
+    position: relative;
+    font-family: 'Raleway', sans-serif;
+    color:  @black;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: center;
+
+    &:after {
+      position: absolute;
+      content: '';
+      width: 8%;
+      border-bottom: 4px dashed @yellow;
+      bottom: -20px;
+      left: 46%;
+    }
+  }
+
+  &__section--button {
+    width: 118px;
+    height: 22px;
+    border: 1px solid @yellow;
+    background: transparent;
+    font-family: 'OpenSans', sans-serif;
+    .upper-color-text(@dark-grey);
+    font-size: 14px;
+    font-weight: 700;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+  }
+}
